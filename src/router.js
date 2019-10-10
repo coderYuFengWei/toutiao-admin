@@ -1,23 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+
+import login from '@/views/login'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
+  // 可忽略，默认的声明, 主要是带#号和不带#号的区别，没有好坏之分
+  mode: 'history',
+  // 可忽略
+  base: process.env.BASE_URL,
+  // 路由的配置
+  routes: [{
+      path: "/login",
+      component: login
     },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+
   ]
 })
