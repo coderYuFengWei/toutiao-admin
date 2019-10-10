@@ -4,6 +4,8 @@ import Router from 'vue-router'
 import login from '@/views/login'
 import index from '@/views/index'
 import postList from '@/views/postList'
+import postAdd from '@/views/postAdd'
+import postEdit from '@/views/postEdit'
 
 Vue.use(Router)
 
@@ -25,7 +27,17 @@ export default new Router({
           path: "post_list",
           component: postList,
           meta: "文章列表"
-        },        
+        },
+        {
+          path: "post_add",
+          component: postAdd,
+          meta: "发布文章"
+        },
+        {
+          path: "post_edit/:id",
+          component: postEdit,
+          meta: "编辑文章"
+        }        
       ]
     },
   ]

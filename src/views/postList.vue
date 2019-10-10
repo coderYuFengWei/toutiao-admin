@@ -63,6 +63,8 @@ export default {
   methods: {
     handleEdit(index, row) {
       console.log(index, row);
+      // 跳转到编辑页
+      this.$router.push("/post_edit/" + row.id);
     },
 
     handleDelete(index, row) {
