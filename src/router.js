@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import login from '@/views/login'
 import index from '@/views/index'
+import postList from '@/views/postList'
 
 Vue.use(Router)
 
@@ -18,7 +19,14 @@ export default new Router({
     },
     {
       path: "/",
-      component: index
+      component: index,
+      meta: "首页",
+      children: [{
+          path: "post_list",
+          component: postList,
+          meta: "文章列表"
+        },        
+      ]
     },
   ]
 })
